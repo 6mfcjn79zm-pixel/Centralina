@@ -1,0 +1,1255 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Centralina — Allenamento Ibrido</title>
+
+<!-- Modalità app a schermo intero (iOS) -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Centralina">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#181a17">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAALJElEQVR4nO3d23EbRxRFUchJWKUAnJ8jcX7OwFn4Qy5KokEQj3l0914rAvzo7Atopvjl67ffLwD0/Hb2BwDgHAIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgA7+vuvf87+CPAhAYC9WH8GJwAAUQIAu3D+Mz4BgO29rf8ff/5+7ieBGwQANub2ZxYCABAlALAl5z8TEQDYjPVnLgIA27D+TEcAAKIEADZw9fz3DCiDEwB4lR9/mJQAwEusP/MSAIAoAYDnOf+ZmgDAk6w/sxMAeIb1ZwECALvwDCjjEwB4mPOfNQgAPMb6swwBgAdYf1YiAABRAgD3cv6zGAGAu1h/1iMA8LlH198zoExBAACiBAA+4ccfViUAcIv1Z2ECAB+y/qxNAACiBACuc/6zPAGAK15Zf8+AMgsBgPfc/kQIAECUAMAvnP90CAD8YP1JEQD4j/WnRgAAogQALpftzn/PgDIRAQA//hAlANRZf7IEACBKAEhz/lMmAHRZf+IEgCjrDwIAm/EMKHMRAIqc/3ARAIKsP3wnALRYf3gjAABRAkCI8x9+JgBUWH94RwBIOGD9PQPKdAQAIEoAWJ8ff+AqAWBx1h8+IgCszPrDDQIAECUALMv5D7cJAGs6eP09A8qMBIAFuf3hHgIAECUArMb5D3cSAJZi/eF+AsA6rD88RAAAogSARZx4/nsGlEkJACvw4w88QQCYnvWH5wgAQJQAMDfnPzxNAJiY9YdXCACz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">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAALJElEQVR4nO3d23EbRxRFUchJWKUAnJ8jcX7OwFn4Qy5KokEQj3l0914rAvzo7Atopvjl67ffLwD0/Hb2BwDgHAIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgA7+vuvf87+CPAhAYC9WH8GJwAAUQIAu3D+Mz4BgO29rf8ff/5+7ieBGwQANub2ZxYCABAlALAl5z8TEQDYjPVnLgIA27D+TEcAAKIEADZw9fz3DCiDEwB4lR9/mJQAwEusP/MSAIAoAYDnOf+ZmgDAk6w/sxMAeIb1ZwECALvwDCjjEwB4mPOfNQgAPMb6swwBgAdYf1YiAABRAgD3cv6zGAGAu1h/1iMA8LlH198zoExBAACiBAA+4ccfViUAcIv1Z2ECAB+y/qxNAACiBACuc/6zPAGAK15Zf8+AMgsBgPfc/kQIAECUAMAvnP90CAD8YP1JEQD4j/WnRgAAogQALpftzn/PgDIRAQA//hAlANRZf7IEACBKAEhz/lMmAHRZf+IEgCjrDwIAm/EMKHMRAIqc/3ARAIKsP3wnALRYf3gjAABRAkCI8x9+JgBUWH94RwBIOGD9PQPKdAQAIEoAWJ8ff+AqAWBx1h8+IgCszPrDDQIAECUALMv5D7cJAGs6eP09A8qMBIAFuf3hHgIAECUArMb5D3cSAJZi/eF+AsA6rD88RAAAogSARZx4/nsGlEkJACvw4w88QQCYnvWH5wgAQJQAMDfnPzxNAJiY9YdXCACzsv7wIgGAl3gGlHkJAFNy/sPrBID5WH/YhAAwGesPWxEAgCgBYCbOf9iQADAN6w/bEgDmMOb6ewaUqQkAQJQAMIExz3+YnQAwOusPOxEAhmb9YT8CABAlAIzL+Q+7EgAGNf76ewaU2QkAIxp//WEBAgAQJQAMx/kPxxAAxmL94TACwECsPxxJAACiBIBRzHX+ewaUBQgAQ5hr/WENAsD5rD+cQgAAogSAkzn/4SwCwJmsP5xIADiN9YdzCQA8zDOgrEEAOIfzH04nAJzA+sMIBICjWX8YhAAARAkAh3L+wzgEgONYfxiKAHCQZdbfM6AsQwAAogSAIyxz/sNKvnz95vss+7L+KX4im4hvAOzL+qdY/7kIAECUALAj53+K8386AsBerH+K9Z+RALAL6w/jEwDgVc7/SQkA23P+p1j/eQkAG7P+KdZ/agLAlqw/TEQAgCc5/2cnAGzG+Z9i/RcgAGzD+sN0BIANWP8a5/8aBAB4jPVfhgDwKuc/TEoAeIn1r3H+r0QAeJ71r7H+ixEAgCgB4EnO/xrn/3oEgGdY/xrrvyQB4GHWv8b6r0oAAKIEgMc4/2uc/wsTAB5g/Wus/9oEgHtZf1iMAADXOf+XJwDcxflfY/0LBIDPWX9YkgDwCesf5PyPEADgF9a/QwC4xfkPCxMAPmT9g5z/KQLAddY/yPrXCABwuVj/JAHgCuc/FAgA71n/IOd/kwDwC+sfZP2zBAAgSgD4wfkf5PwvEwD+Y/2DrH+cAHC5WH9IEgCIcv4jADj/i6w/FwHA+kOWAKRZ/ybnP98JALRYf94IQJfzP8j68zMBiLL+gAAUWf8m5z/vCAAkWH/+TwBynP/AdwLQYv2bnP9cJQAh1r/J+vMRAQCIEoAK53+T858bBCDB+jdZf24TgPVZf+AqAYA1Of/5lAAszvnfZP25hwCszPo3WX/uJADLsv7AbQIAS3H+cz8BWJPzv8n68xABWJD1B+4hAKux/lnOfx4lALAC688TBGApzn/gfgKwDuuf5fznOQKwCOufZf15mgAARAnACpz/Wc5/XiEA07P+WdafFwnA3Kx/lvXndQIAECUAE3P+Zzn/2YQAzMr6Z1l/tiIAU7L+wOsEAGbi/GdDAjAf53+W9WdbAjAZ6w9s5cvXb24K1rFwIJ3/bM43AJiA9WcPAgAQJQAwOuc/OxEA1rHkfwBYf/YjADAu68+uBAAgSgBgUM5/9iYAMCLrzwEEACBKAGA4zn+OIQAwFuvPYQSARSz5EgDsSgBgIM5/jiQAMArrz8EEACBKAGAIzn+OJwBwPuvPKQQATmb9OYsAAEQJACuY9yUA5z8nEgA4jfXnXAIAECUAcA7nP6cTADiB9WcEAgAQJQBwNOc/gxAAOJT1ZxwCwPTmfQkAziUAcBznP0MRADiI9Wc0AgBHsP4MSAAAogQAduf8Z0wCAPuy/gxLAACiBIC5Df4SgPOfkQkA7MX6MzgBAIgSANiF85/xCQBsz/ozBQEAiBIA2Jjzn1kIAGzJ+jMRAWBio70EYP2ZiwAARAkAbMP5z3QEADZg/ZmRAABECQC8yvnPpAQAXmL9mZcAAEQJALMa4SUA5z9TEwB4kvVndgIAECUA8AznPwsQAHiY9WcNAgCPsf4sQwAAogQAHuD8ZyUCwJROeQnA+rMYAQCIEgC4i/Of9QgAfM76syQBAIgSAPiE859VCQDcYv1ZmAAARAkA8znsJQDnP2sTALjO+rM8AYArrD8FAgAQJQDwnvOfCAGAX1h/OgQAIEoA4AfnPykCwGT2ewnA+lMjAABRAgCXi/OfJAEA60+UAABECQB1zn+yBIA060+ZANBl/YkTAGZy2F8CgAIBIMr5DwJAkfWHiwAAZAkAOc5/+E4AaLH+8EYAAKIEgBDnP/xMAJjGiy8BWH94RwAAogSABOc//J8AsD7rD1cJAIuz/vARAQCIEgBW5vyHGwSAZVl/uE0AmIO/BACbEwDW5PyHTwkAC7L+cA8BAIgSAFbj/Ic7CQBLsf5wPwEAiBIA1uH8h4cIABO45yUA6w+PEgBWYP3hCQIAECUATM/5D88RAOZm/eFpAgAQJQBMzPkPrxAAZmX94UUCwOj8JQDYiQAwJec/vE4AmI/1h00IAECUADAZ5z9sRQCYifWHDQkA07D+sC0BAIgSAIb29hKA8x82JwBMwPrDHgQAIEoAGJ3zH3by5es3/7oAinwDAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAqH8Bnd3qgjE/8v8AAAAASUVORK5CYII=">
+<link rel="manifest" href="data:application/manifest+json,{%22name%22:%22Centralina%22,%22short_name%22:%22Centralina%22,%22display%22:%22standalone%22,%22background_color%22:%22%23181a17%22,%22theme_color%22:%22%23181a17%22,%22start_url%22:%22.%22}">
+
+<style>
+  :root{
+    --bg:#181a17;
+    --panel:#222420;
+    --panel-raised:#2b2e28;
+    --line:#3a3d35;
+    --line-soft:#2f3129;
+    --text:#ece8db;
+    --text-dim:#9a9c8e;
+    --text-faint:#6c6e62;
+    --accent:#f2a900;
+    --accent-dim:#8a6a1f;
+    --ok:#7a9a5c;
+    --warn:#f2a900;
+    --danger:#c1552e;
+    --radius:14px;
+    --radius-sm:8px;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    overflow-x:hidden;
+    -webkit-user-select:none;
+    user-select:none;
+  }
+  .mono{font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;}
+  input, textarea{-webkit-user-select:text; user-select:text;}
+  #app{
+    max-width:480px;
+    margin:0 auto;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(242,169,0,0.05), rgba(242,169,0,0) 140px),
+      var(--bg);
+  }
+
+  /* Topbar */
+  .topbar{
+    padding:22px 20px 14px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .brand{
+    font-weight:700;
+    font-size:1.3rem;
+    letter-spacing:0.01em;
+  }
+  .brand span{color:var(--accent);}
+  .topdate{
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:0.78rem;
+    color:var(--text-faint);
+  }
+
+  /* Views */
+  .view{
+    flex:1;
+    padding:18px 20px 100px;
+    display:none;
+    animation:fade .25s ease;
+  }
+  .view.active{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+
+  h1.page-title{
+    font-size:1.05rem;
+    font-weight:600;
+    margin:4px 0 16px;
+    color:var(--text);
+  }
+  p.hint{
+    color:var(--text-dim);
+    font-size:0.88rem;
+    line-height:1.5;
+    margin:0 0 16px;
+  }
+
+  /* Day picker grid */
+  .day-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .day-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px;
+    text-align:left;
+    cursor:pointer;
+    position:relative;
+    transition:border-color .15s, background .15s;
+  }
+  .day-card:active{transform:scale(0.98);}
+  .day-card.selected{
+    border-color:var(--accent);
+    background:linear-gradient(160deg, rgba(242,169,0,0.10), rgba(242,169,0,0.02));
+  }
+  .day-card .letter{
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:0.75rem;
+    color:var(--accent);
+    display:block;
+    margin-bottom:6px;
+  }
+  .day-card .title{
+    font-weight:600;
+    font-size:0.92rem;
+    display:block;
+    margin-bottom:4px;
+  }
+  .day-card .sub{
+    color:var(--text-dim);
+    font-size:0.76rem;
+  }
+  .day-card .badge{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:var(--accent);
+    color:#1a1a17;
+    font-size:0.62rem;
+    font-weight:700;
+    padding:2px 6px;
+    border-radius:20px;
+  }
+
+  /* Energy switch */
+  .energy-block{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px;
+    margin-bottom:22px;
+  }
+  .energy-label{
+    font-size:0.82rem;
+    color:var(--text-dim);
+    margin-bottom:10px;
+  }
+  .energy-toggle{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    background:var(--bg);
+    border-radius:10px;
+    padding:4px;
+    gap:4px;
+    border:1px solid var(--line);
+  }
+  .energy-opt{
+    padding:10px 4px;
+    text-align:center;
+    border-radius:7px;
+    font-size:0.76rem;
+    font-weight:600;
+    color:var(--text-dim);
+    cursor:pointer;
+    border:1px solid transparent;
+  }
+  .energy-opt.on[data-e="verde"]{background:rgba(122,154,92,0.18); color:#c3d9ac; border-color:var(--ok);}
+  .energy-opt.on[data-e="giallo"]{background:rgba(242,169,0,0.16); color:#f5c85a; border-color:var(--accent);}
+  .energy-opt.on[data-e="rosso"]{background:rgba(193,85,46,0.16); color:#e59473; border-color:var(--danger);}
+
+  .btn-primary{
+    width:100%;
+    padding:15px;
+    background:var(--accent);
+    color:#1a1a17;
+    border:none;
+    border-radius:var(--radius-sm);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    cursor:pointer;
+    letter-spacing:0.01em;
+  }
+  .btn-primary:active{transform:scale(0.98);}
+  .btn-secondary{
+    width:100%;
+    padding:13px;
+    background:transparent;
+    color:var(--text-dim);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;
+    font-weight:600;
+    font-size:0.88rem;
+    cursor:pointer;
+    margin-top:10px;
+  }
+
+  /* Session view */
+  .session-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:4px;
+  }
+  .session-tag{
+    display:inline-block;
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:0.72rem;
+    padding:3px 8px;
+    border-radius:20px;
+    border:1px solid var(--line);
+    color:var(--text-dim);
+  }
+  .rounds-box{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:14px;
+  }
+  .rounds-box .n{
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:1.6rem;
+    font-weight:600;
+    color:var(--accent);
+  }
+  .round-btns{display:flex; gap:8px;}
+  .round-btns button{
+    width:34px;height:34px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--panel-raised);
+    color:var(--text);
+    font-size:1.1rem;
+    cursor:pointer;
+  }
+
+  .exercise-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px;
+    margin-bottom:10px;
+  }
+  .exercise-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:8px;
+    cursor:pointer;
+  }
+  .exercise-name{
+    font-weight:600;
+    font-size:0.94rem;
+    margin-bottom:3px;
+  }
+  .exercise-target{
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:0.76rem;
+    color:var(--text-dim);
+  }
+  .info-dot{
+    width:22px;height:22px;
+    flex-shrink:0;
+    border-radius:50%;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--text-faint);
+    font-size:0.7rem;
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+  }
+  .exercise-controls{
+    margin-top:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .load-input{
+    width:70px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:7px;
+    color:var(--text);
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:0.85rem;
+    padding:8px 8px;
+    text-align:center;
+  }
+  .load-input:focus{outline:none; border-color:var(--accent);}
+  .load-unit{font-size:0.72rem; color:var(--text-faint); margin-right:4px;}
+  .set-dots{display:flex; gap:6px; flex:1;}
+  .set-dot{
+    width:26px;height:26px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:0.68rem;
+    color:var(--text-faint);
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .set-dot.done{
+    background:var(--accent);
+    color:#1a1a17;
+    border-color:var(--accent);
+    font-weight:700;
+  }
+  .timer-btn{
+    background:var(--panel-raised);
+    border:1px solid var(--line);
+    color:var(--text);
+    padding:7px 11px;
+    border-radius:7px;
+    font-size:0.74rem;
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+
+  .end-session{margin-top:6px;}
+
+  /* Recovery notice */
+  .notice{
+    background:rgba(193,85,46,0.12);
+    border:1px solid var(--danger);
+    border-radius:var(--radius);
+    padding:12px 14px;
+    font-size:0.84rem;
+    color:#e6b39a;
+    margin-bottom:16px;
+    line-height:1.5;
+  }
+
+  /* Progress view */
+  .stat-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .stat-box{
+    flex:1;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:12px;
+    text-align:center;
+  }
+  .stat-box .n{
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:1.35rem;
+    font-weight:600;
+    color:var(--accent);
+    display:block;
+  }
+  .stat-box .l{
+    font-size:0.7rem;
+    color:var(--text-dim);
+  }
+  .chart-box{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px;
+    margin-bottom:20px;
+  }
+  .chart-empty{
+    color:var(--text-faint);
+    font-size:0.82rem;
+    text-align:center;
+    padding:20px 0;
+  }
+  .progress-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px;
+    margin-bottom:10px;
+  }
+  .progress-card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:6px;
+  }
+  .progress-name{
+    font-weight:600;
+    font-size:0.88rem;
+  }
+  .progress-trend{
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:0.78rem;
+    font-weight:600;
+  }
+  .progress-latest{
+    text-align:right;
+    color:var(--text-dim);
+    font-size:0.76rem;
+    margin-top:2px;
+  }
+  .history-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .history-item:last-child{border-bottom:none;}
+  .history-item .d{
+    font-weight:600;
+    font-size:0.86rem;
+  }
+  .history-item .m{
+    font-size:0.74rem;
+    color:var(--text-faint);
+  }
+  .history-item .tag{
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:0.68rem;
+    padding:3px 7px;
+    border-radius:20px;
+    border:1px solid var(--line);
+  }
+
+  /* Library */
+  .lib-grid{display:flex; flex-direction:column; gap:8px;}
+  .lib-item{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:13px 14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+  }
+  .lib-item .name{font-weight:600; font-size:0.9rem;}
+  .lib-item .day{font-size:0.7rem; color:var(--text-faint); font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;}
+
+  /* Modal */
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(10,11,9,0.72);
+    display:none;
+    align-items:flex-end;
+    justify-content:center;
+    z-index:50;
+  }
+  .modal-overlay.active{display:flex;}
+  .modal-sheet{
+    background:var(--panel);
+    border-top:1px solid var(--line);
+    border-radius:20px 20px 0 0;
+    max-width:480px;
+    width:100%;
+    max-height:85vh;
+    overflow-y:auto;
+    padding:20px 20px 30px;
+    animation:slideup .22s ease;
+  }
+  @keyframes slideup{from{transform:translateY(30px); opacity:0;}to{transform:translateY(0); opacity:1;}}
+  .modal-handle{
+    width:36px;height:4px;
+    background:var(--line);
+    border-radius:4px;
+    margin:0 auto 16px;
+  }
+  .pose-box{
+    background:
+      repeating-linear-gradient(0deg, var(--line-soft) 0 1px, transparent 1px 20px),
+      repeating-linear-gradient(90deg, var(--line-soft) 0 1px, transparent 1px 20px),
+      var(--bg);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:10px;
+    display:flex;
+    justify-content:center;
+    margin-bottom:16px;
+  }
+  .pose-box svg{color:var(--accent); width:140px; height:140px;}
+  .modal-title{font-size:1.05rem; font-weight:700; margin-bottom:10px;}
+  .modal-target{font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace; color:var(--text-dim); font-size:0.82rem; margin-bottom:14px;}
+  .cue-box{
+    background:var(--bg);
+    border-left:3px solid var(--accent);
+    padding:12px 14px;
+    border-radius:0 8px 8px 0;
+    font-size:0.86rem;
+    line-height:1.55;
+    color:var(--text);
+    margin-bottom:16px;
+  }
+  .video-link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px;
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    color:var(--text);
+    text-decoration:none;
+    font-size:0.85rem;
+    font-weight:600;
+  }
+
+  /* Timer overlay */
+  .timer-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(10,11,9,0.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    z-index:60;
+  }
+  .timer-overlay.active{display:flex;}
+  .timer-num{
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:4.2rem;
+    font-weight:600;
+    color:var(--accent);
+    margin-bottom:6px;
+    letter-spacing:0.02em;
+  }
+  .timer-sub{color:var(--text-dim); font-size:0.85rem; margin-bottom:30px;}
+  .timer-controls{display:flex; gap:14px; margin-bottom:16px;}
+  .timer-controls button{
+    padding:12px 20px;
+    border-radius:var(--radius-sm);
+    border:1px solid var(--line);
+    background:var(--panel-raised);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;
+    font-weight:600;
+    font-size:0.86rem;
+    cursor:pointer;
+  }
+  .timer-controls button.primary{background:var(--accent); color:#1a1a17; border-color:var(--accent);}
+  .timer-adjust{display:flex; gap:10px;}
+  .timer-adjust button{
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--text-dim);
+    padding:6px 12px;
+    border-radius:20px;
+    font-family:ui-monospace,'SF Mono','Menlo','Roboto Mono',monospace;
+    font-size:0.75rem;
+  }
+  .timer-close{
+    position:absolute;
+    top:24px; right:24px;
+    color:var(--text-dim);
+    background:none;
+    border:none;
+    font-size:1.4rem;
+    cursor:pointer;
+  }
+
+  /* Toast */
+  .toast{
+    position:fixed;
+    bottom:90px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--accent);
+    color:#1a1a17;
+    padding:11px 20px;
+    border-radius:20px;
+    font-weight:600;
+    font-size:0.85rem;
+    z-index:70;
+    opacity:0;
+    transition:opacity .25s;
+    max-width:88%;
+    text-align:center;
+    white-space:normal;
+  }
+  .toast.show{opacity:1;}
+
+  /* Tabbar */
+  .tabbar{
+    position:fixed;
+    bottom:0;
+    left:0; right:0;
+    max-width:480px;
+    margin:0 auto;
+    background:rgba(24,26,23,0.96);
+    backdrop-filter:blur(6px);
+    border-top:1px solid var(--line-soft);
+    display:flex;
+    padding:8px 6px calc(8px + env(safe-area-inset-bottom));
+    z-index:40;
+  }
+  .tab{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:3px;
+    background:none;
+    border:none;
+    color:var(--text-faint);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,system-ui,sans-serif;
+    font-size:0.66rem;
+    padding:6px 2px;
+    cursor:pointer;
+  }
+  .tab.active{color:var(--accent);}
+  .tab svg{width:21px; height:21px;}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <div class="topbar">
+    <div class="brand">CENTRAL<span>INA</span></div>
+    <div class="topdate mono" id="topdate"></div>
+  </div>
+
+  <!-- OGGI -->
+  <div class="view active" id="view-oggi">
+    <h1 class="page-title">Che sessione fai oggi?</h1>
+    <div class="day-grid" id="dayGrid"></div>
+
+    <div class="energy-block">
+      <div class="energy-label">Quanta carica hai oggi?</div>
+      <div class="energy-toggle" id="energyToggle">
+        <div class="energy-opt" data-e="verde">Carica piena</div>
+        <div class="energy-opt" data-e="giallo">A metà</div>
+        <div class="energy-opt" data-e="rosso">Scarico</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" id="startBtn">Avvia sessione</button>
+  </div>
+
+  <!-- SESSIONE -->
+  <div class="view" id="view-sessione">
+    <div id="sessioneContent"></div>
+  </div>
+
+  <!-- PROGRESSI -->
+  <div class="view" id="view-progressi">
+    <h1 class="page-title">I tuoi progressi</h1>
+    <div class="stat-row" id="statRow"></div>
+    <div id="progressGrid"></div>
+    <h1 class="page-title">Storico sessioni</h1>
+    <div id="historyList"></div>
+  </div>
+
+  <!-- ESERCIZI -->
+  <div class="view" id="view-esercizi">
+    <h1 class="page-title">Libreria esercizi</h1>
+    <p class="hint">Tocca un esercizio per rivedere l'esecuzione.</p>
+    <div class="lib-grid" id="libGrid"></div>
+  </div>
+
+  <div class="tabbar">
+    <button class="tab active" data-tab="oggi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 12 L16 9"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>
+      Oggi
+    </button>
+    <button class="tab" data-tab="sessione">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 L4 14 h6 l-1 8 9-13h-6z"/></svg>
+      Sessione
+    </button>
+    <button class="tab" data-tab="progressi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V10 M11 19V5 M18 19v-7"/></svg>
+      Progressi
+    </button>
+    <button class="tab" data-tab="esercizi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>
+      Esercizi
+    </button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="pose-box"><div id="modalPose"></div></div>
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-target mono" id="modalTarget"></div>
+    <div class="cue-box" id="modalCue"></div>
+    <a class="video-link" id="modalVideo" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+      Cerca video esecuzione
+    </a>
+  </div>
+</div>
+
+<div class="timer-overlay" id="timerOverlay">
+  <button class="timer-close" id="timerClose">✕</button>
+  <div class="timer-sub" id="timerLabel">Recupero</div>
+  <div class="timer-num mono" id="timerNum">01:30</div>
+  <div class="timer-adjust">
+    <button id="timerMinus">−15s</button>
+    <button id="timerPlus">+15s</button>
+  </div>
+  <div style="height:20px;"></div>
+  <div class="timer-controls">
+    <button id="timerStart" class="primary">Avvia</button>
+    <button id="timerReset">Reset</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+
+/* ---------- DATI ALLENAMENTO ---------- */
+const POSES = {
+  standing:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="50" cy="16" r="6" fill="currentColor"/><line x1="50" y1="22" x2="50" y2="56"/><line x1="50" y1="30" x2="32" y2="46"/><line x1="50" y1="30" x2="68" y2="46"/><line x1="50" y1="56" x2="37" y2="90"/><line x1="50" y1="56" x2="63" y2="90"/><circle cx="50" cy="30" r="2.5" fill="currentColor"/></svg>',
+  squat:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="52" cy="24" r="6" fill="currentColor"/><line x1="52" y1="30" x2="46" y2="58"/><line x1="52" y1="35" x2="24" y2="28"/><line x1="52" y1="35" x2="80" y2="28"/><line x1="46" y1="58" x2="26" y2="68"/><line x1="26" y1="68" x2="36" y2="92"/><line x1="46" y1="58" x2="66" y2="68"/><line x1="66" y1="68" x2="56" y2="92"/><circle cx="26" cy="68" r="2.5" fill="currentColor"/><circle cx="66" cy="68" r="2.5" fill="currentColor"/></svg>',
+  hinge:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="28" cy="32" r="6" fill="currentColor"/><line x1="28" y1="38" x2="58" y2="60"/><line x1="30" y1="42" x2="16" y2="58"/><line x1="58" y1="60" x2="52" y2="86"/><line x1="58" y1="60" x2="70" y2="86"/><circle cx="58" cy="60" r="2.5" fill="currentColor"/></svg>',
+  press:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="50" cy="22" r="6" fill="currentColor"/><line x1="50" y1="28" x2="50" y2="56"/><line x1="50" y1="32" x2="30" y2="12"/><line x1="50" y1="32" x2="70" y2="12"/><line x1="25" y1="10" x2="75" y2="10"/><line x1="50" y1="56" x2="40" y2="90"/><line x1="50" y1="56" x2="60" y2="90"/></svg>',
+  pull:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="50" cy="20" r="6" fill="currentColor"/><line x1="50" y1="26" x2="50" y2="58"/><line x1="50" y1="30" x2="26" y2="40"/><line x1="26" y1="40" x2="40" y2="46"/><line x1="50" y1="30" x2="74" y2="40"/><line x1="74" y1="40" x2="60" y2="46"/><line x1="50" y1="58" x2="40" y2="90"/><line x1="50" y1="58" x2="60" y2="90"/></svg>',
+  lunge:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="44" cy="22" r="6" fill="currentColor"/><line x1="44" y1="28" x2="47" y2="54"/><line x1="44" y1="32" x2="28" y2="42"/><line x1="44" y1="32" x2="60" y2="24"/><line x1="47" y1="54" x2="34" y2="66"/><line x1="34" y1="66" x2="38" y2="90"/><line x1="47" y1="54" x2="66" y2="62"/><line x1="66" y1="62" x2="78" y2="76"/><circle cx="34" cy="66" r="2.5" fill="currentColor"/><circle cx="66" cy="62" r="2.5" fill="currentColor"/></svg>',
+  plank:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="16" cy="46" r="6" fill="currentColor"/><line x1="22" y1="47" x2="80" y2="50"/><line x1="28" y1="48" x2="28" y2="66"/><line x1="80" y1="50" x2="92" y2="62"/></svg>',
+  carry:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="50" cy="18" r="6" fill="currentColor"/><line x1="50" y1="24" x2="50" y2="58"/><line x1="50" y1="28" x2="34" y2="54"/><line x1="50" y1="28" x2="66" y2="54"/><rect x="30" y="54" width="8" height="8" fill="currentColor" stroke="none"/><rect x="62" y="54" width="8" height="8" fill="currentColor" stroke="none"/><line x1="50" y1="58" x2="38" y2="76"/><line x1="38" y1="76" x2="34" y2="90"/><line x1="50" y1="58" x2="60" y2="72"/><line x1="60" y1="72" x2="68" y2="90"/></svg>',
+  swing:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="46" cy="24" r="6" fill="currentColor"/><line x1="46" y1="30" x2="54" y2="56"/><line x1="46" y1="34" x2="78" y2="36"/><circle cx="82" cy="36" r="5" fill="currentColor"/><line x1="54" y1="56" x2="42" y2="90"/><line x1="54" y1="56" x2="66" y2="88"/></svg>',
+  raise:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="50" cy="18" r="6" fill="currentColor"/><line x1="50" y1="24" x2="50" y2="58"/><line x1="50" y1="30" x2="20" y2="30"/><line x1="50" y1="30" x2="80" y2="30"/><rect x="12" y="26" width="9" height="9" fill="currentColor" stroke="none"/><rect x="79" y="26" width="9" height="9" fill="currentColor" stroke="none"/><line x1="50" y1="58" x2="40" y2="90"/><line x1="50" y1="58" x2="60" y2="90"/></svg>',
+  burpee:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="50" cy="18" r="6" fill="currentColor"/><path d="M50 24 C46 34 46 40 50 46" /><line x1="50" y1="26" x2="30" y2="10"/><line x1="50" y1="26" x2="70" y2="10"/><line x1="50" y1="46" x2="38" y2="60"/><line x1="38" y1="60" x2="42" y2="76"/><line x1="50" y1="46" x2="60" y2="58"/><line x1="60" y1="58" x2="56" y2="76"/></svg>',
+  run:'<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="56" cy="20" r="6" fill="currentColor"/><line x1="56" y1="26" x2="48" y2="54"/><line x1="56" y1="30" x2="40" y2="20"/><line x1="56" y1="30" x2="68" y2="42"/><line x1="48" y1="54" x2="34" y2="48"/><line x1="34" y1="48" x2="28" y2="62"/><line x1="48" y1="54" x2="62" y2="66"/><line x1="62" y1="66" x2="74" y2="72"/></svg>'
+};
+
+const DAYS = {
+  A:{ id:'A', title:'Forza Lower', sub:'Gambe + Core', mins:65,
+    exercises:[
+      {id:'belt-squat', name:'Belt squat', sets:4, reps:'6', rest:150, pose:'squat', cue:'Schiena libera dal carico: scendi controllato sotto il parallelo, spingi via il pavimento con i talloni in risalita.', video:'belt squat tecnica esecuzione'},
+      {id:'stacco-rumeno', name:'Stacco rumeno con bilanciere', sets:3, reps:'8', rest:100, pose:'hinge', cue:'Ginocchia leggermente flesse, spingi i fianchi indietro, bilanciere vicino alle gambe: senti lo stretch sui femorali.', video:'stacco rumeno rdl tecnica esecuzione'},
+      {id:'affondi-c', name:'Affondi camminati con manubri', sets:3, reps:'10 per gamba', rest:90, pose:'lunge', cue:'Passo lungo, il ginocchio dietro sfiora il pavimento, busto verticale per tutto il movimento.', video:'affondi camminati manubri tecnica'},
+      {id:'hip-thrust', name:'Hip thrust', sets:3, reps:'10', rest:90, pose:'hinge', cue:'Spingi con i talloni, contrai forte i glutei in alto, mento leggermente rientrato.', video:'hip thrust bilanciere tecnica'},
+      {id:'leg-curl', name:'Leg curl (macchina)', sets:3, reps:'10-12', rest:60, pose:'hinge', cue:'Movimento lento, senza staccare i fianchi dal cuscino, contrai bene i femorali in cima.', video:'leg curl macchina tecnica esecuzione'},
+      {id:'farmers', name:'Farmer\'s carry', sets:3, reps:'30 metri', rest:60, pose:'carry', cue:'Spalle basse e indietro, core rigido come una tavola, passi corti e veloci.', video:'farmers carry tecnica esecuzione'},
+      {id:'plank-ar', name:'Plank anti-rotazione', sets:3, reps:'40 sec', rest:45, pose:'plank', cue:'Bacino neutro, non far cadere i fianchi da un lato, respira senza perdere tensione.', video:'plank anti rotazione core esercizio'},
+      {id:'finisher-a', name:'Finisher Zona 2 (bike o corsa)', sets:1, reps:'10 min', rest:0, pose:'run', unit:'km', cue:'Ritmo blando, è recupero attivo: non deve costare fatica.', video:'allenamento zona 2 cosa significa'}
+    ]},
+  B:{ id:'B', title:'Forza Upper', sub:'Petto, Schiena, Spalle', mins:65,
+    exercises:[
+      {id:'panca', name:'Panca piana', sets:4, reps:'8', rest:120, pose:'press', cue:'Scapole retratte, controlla la discesa, spingi esplosivo in salita.', video:'panca piana tecnica esecuzione'},
+      {id:'panca-inclinata', name:'Panca inclinata con manubri', sets:3, reps:'8-10', rest:90, pose:'press', cue:'Angolo 30-45°, spingi in alto e leggermente verso l\'interno, senti il petto alto lavorare.', video:'panca inclinata manubri tecnica esecuzione'},
+      {id:'military-press', name:'Military press', sets:3, reps:'6-8', rest:120, pose:'press', cue:'Core rigido, non inarcare la schiena, spingi il bilanciere in linea retta sopra la testa.', video:'military press tecnica esecuzione'},
+      {id:'trazioni', name:'Trazioni o lat machine', sets:4, reps:'8', rest:90, pose:'pull', cue:'Parti da braccia completamente tese, tira portando il petto verso la sbarra.', video:'trazioni tecnica esecuzione'},
+      {id:'row', name:'Row bilanciere o manubrio', sets:3, reps:'10', rest:90, pose:'pull', cue:'Schiena piatta, tira verso l\'ombelico, contrai bene le scapole in cima.', video:'bent over row tecnica esecuzione'},
+      {id:'alzate-laterali', name:'Alzate laterali con manubri', sets:3, reps:'12-15', rest:60, pose:'raise', cue:'Braccia quasi tese, alza fino all\'altezza delle spalle, gomiti leggermente piegati, scendi controllato.', video:'alzate laterali manubri tecnica esecuzione'},
+      {id:'curl-bicipiti', name:'Curl bicipiti con bilanciere o manubri', sets:3, reps:'10', rest:60, pose:'pull', cue:'Gomiti fermi lungo i fianchi, sali in controllo, non dondolare la schiena per aiutarti.', video:'curl bicipiti bilanciere tecnica esecuzione'},
+      {id:'french-press', name:'French press o pushdown tricipiti', sets:3, reps:'10-12', rest:60, pose:'press', cue:'Gomiti fermi vicino alla testa, estendi controllato senza aprirli verso l\'esterno.', video:'french press tricipiti tecnica esecuzione'},
+      {id:'cardio-b', name:'Cardio Zona 2', sets:1, reps:'15-20 min', rest:0, pose:'run', unit:'km', cue:'Ritmo conversazionale: se non riesci a parlare, stai andando troppo forte.', video:'allenamento zona 2 corsa'}
+    ]},
+  C:{ id:'C', title:'Forza Ibrida', sub:'Bilanciere e manubri, stile Hyrox ma pesante', mins:48, rounds:4,
+    exercises:[
+      {id:'kb-clean-press', name:'Kettlebell clean and press', sets:1, reps:'8 per lato', rest:0, pose:'press', cue:'Solleva la kettlebell al petto in un movimento fluido, poi spingi sopra la testa: più naturale del bilanciere, lascia che sia il peso a guidare il movimento.', video:'kettlebell clean and press tecnica esecuzione'},
+      {id:'farmers-c', name:'Farmer\'s carry pesante', sets:1, reps:'40 metri', rest:0, pose:'carry', cue:'Carico più pesante del solito: cammina dritto, non lasciare che le spalle cadano in avanti.', video:'farmers carry pesante tecnica esecuzione'},
+      {id:'kb-swing', name:'Kettlebell swing pesante', sets:1, reps:'15', rest:0, pose:'swing', cue:'Il movimento parte dall\'anca, non dalle braccia: i glutei spingono in avanti.', video:'kettlebell swing tecnica esecuzione'},
+      {id:'affondi-bil', name:'Affondi con bilanciere o manubri pesanti', sets:1, reps:'10 per gamba', rest:0, pose:'lunge', cue:'Carico pesante, passo controllato, il ginocchio dietro sfiora appena il pavimento.', video:'affondi bilanciere pesanti tecnica esecuzione'},
+      {id:'row-ski', name:'Row o Ski Erg', sets:1, reps:'400 m', rest:0, pose:'run', cue:'Qui costruisci il vogatore: spinta potente dalle gambe, tira con la schiena, prova a migliorare il tuo tempo ogni settimana.', video:'vogatore tecnica esecuzione migliorare tempo'}
+    ]},
+  D:{ id:'D', title:'Endurance', sub:'Resistenza + Core', mins:55,
+    exercises:[
+      {id:'cardio-d', name:'Corsa o bike Zona 2', sets:1, reps:'35-40 min', rest:0, pose:'run', unit:'km', cue:'Passo costante e sostenibile: il vero lavoro sul motore aerobico è qui.', video:'allenamento zona 2 costruire resistenza'},
+      {id:'dead-bug', name:'Dead bug', sets:3, reps:'12', rest:45, pose:'plank', cue:'La schiena resta sempre a contatto col pavimento, movimento lento e controllato.', video:'dead bug esercizio core tecnica'},
+      {id:'leg-raises', name:'Leg raises (sollevamento gambe)', sets:3, reps:'15', rest:45, pose:'plank', cue:'Gambe quasi tese, scendi senza inarcare la schiena: senti il lavoro sulla parte bassa dell\'addome.', video:'leg raises addome tecnica esecuzione'},
+      {id:'pallof', name:'Pallof press', sets:3, reps:'12 per lato', rest:45, pose:'press', cue:'Resisti alla rotazione, core rigido, spingi avanti e torna lento.', video:'pallof press tecnica esecuzione'},
+      {id:'hollow', name:'Hollow hold', sets:3, reps:'30 sec', rest:45, pose:'plank', cue:'Zona lombare sempre a contatto col pavimento, gambe e spalle sollevate.', video:'hollow hold tecnica esecuzione'},
+      {id:'mobilita', name:'Mobilità anche/caviglie', sets:1, reps:'10 min', rest:0, pose:'standing', cue:'Lavoro lento e respirato, non forzare mai il range di movimento.', video:'mobilità anche caviglie esercizi'}
+    ]}
+};
+
+const RECOVERY = [
+  {id:'z2-rec', name:'Zona 2 leggera', sets:1, reps:'15-20 min', rest:0, pose:'run', cue:'Solo movimento leggero: oggi l\'obiettivo è recuperare, non spingere.', video:'recupero attivo allenamento leggero'},
+  {id:'mob-rec', name:'Mobilità generale', sets:1, reps:'10 min', rest:0, pose:'standing', cue:'Il corpo ha già lavorato duro al turno di oggi: rispettalo.', video:'mobilità generale routine'}
+];
+
+const DAY_ORDER = ['A','B','C','D'];
+
+/* ---------- STATO ---------- */
+let state = { loads:{}, loadHistory:{}, history:[] };
+let current = { dayId:null, energy:'verde', rounds:5, sessionExercises:[], setState:{} };
+let timer = { seconds:90, initial:90, running:false, interval:null, label:'' };
+
+async function loadState(){
+  try{
+    const raw = localStorage.getItem('centralina-data');
+    if(raw){
+      const parsed = JSON.parse(raw);
+      state = Object.assign({loads:{}, loadHistory:{}, history:[]}, parsed);
+    }
+  }catch(e){
+    state = { loads:{}, loadHistory:{}, history:[] };
+  }
+}
+async function saveState(){
+  try{
+    localStorage.setItem('centralina-data', JSON.stringify(state));
+  }catch(e){
+    console.error('Errore salvataggio', e);
+  }
+}
+
+/* ---------- UTIL ---------- */
+function fmtDate(d){
+  return d.toLocaleDateString('it-IT', {weekday:'short', day:'numeric', month:'short'});
+}
+function suggestedDay(){
+  if(state.history.length === 0) return 'A';
+  const last = state.history[state.history.length-1].dayId;
+  const idx = DAY_ORDER.indexOf(last);
+  return DAY_ORDER[(idx+1) % DAY_ORDER.length];
+}
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2400);
+}
+function allExercisesFlat(){
+  let list = [];
+  DAY_ORDER.forEach(k=>{
+    DAYS[k].exercises.forEach(ex=> list.push(Object.assign({dayId:k}, ex)));
+  });
+  return list;
+}
+function findExercise(id){
+  return allExercisesFlat().find(e=>e.id===id);
+}
+
+/* ---------- TABS ---------- */
+function switchTab(name){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active', t.dataset.tab===name));
+  if(name==='progressi') renderProgressi();
+  if(name==='esercizi') renderEsercizi();
+}
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click', ()=>switchTab(t.dataset.tab));
+});
+
+/* ---------- VIEW: OGGI ---------- */
+function renderOggi(){
+  const grid = document.getElementById('dayGrid');
+  const sug = suggestedDay();
+  grid.innerHTML = DAY_ORDER.map(k=>{
+    const d = DAYS[k];
+    const sel = current.dayId===k ? 'selected' : '';
+    const badge = (sug===k && !current.dayId) ? '<span class="badge">Consigliata</span>' : '';
+    return '<button class="day-card '+sel+'" data-day="'+k+'">'+badge+
+      '<span class="letter">SESSIONE '+k+' · ~'+d.mins+' min</span>'+
+      '<span class="title">'+d.title+'</span>'+
+      '<span class="sub">'+d.sub+'</span></button>';
+  }).join('');
+  grid.querySelectorAll('.day-card').forEach(c=>{
+    c.addEventListener('click', ()=>{
+      current.dayId = c.dataset.day;
+      renderOggi();
+    });
+  });
+
+  document.querySelectorAll('.energy-opt').forEach(o=>{
+    o.classList.toggle('on', o.dataset.e===current.energy);
+    o.onclick = ()=>{ current.energy = o.dataset.e; renderOggi(); };
+  });
+}
+document.getElementById('startBtn').addEventListener('click', ()=>{
+  if(!current.dayId){ showToast('Scegli prima una sessione'); return; }
+  buildSession();
+  switchTab('sessione');
+});
+
+/* ---------- SESSION BUILD ---------- */
+function buildSession(){
+  current.setState = {};
+  if(current.energy === 'rosso'){
+    current.sessionExercises = RECOVERY.map(e=>Object.assign({}, e));
+    current.isRecovery = true;
+  }else{
+    current.isRecovery = false;
+    const day = DAYS[current.dayId];
+    current.sessionExercises = day.exercises.map(e=>{
+      const clone = Object.assign({}, e);
+      if(current.energy==='giallo' && clone.sets > 2){
+        clone.sets = clone.sets - 1;
+      }
+      return clone;
+    });
+    if(current.dayId==='C'){
+      current.rounds = current.energy==='giallo' ? Math.max(3, day.rounds-1) : day.rounds;
+    }
+  }
+  renderSessione();
+}
+
+function renderSessione(){
+  const c = document.getElementById('sessioneContent');
+  if(!current.dayId){
+    c.innerHTML = '<h1 class="page-title">Nessuna sessione avviata</h1><p class="hint">Vai su "Oggi", scegli una sessione e il tuo livello di energia, poi premi Avvia.</p>';
+    return;
+  }
+  let html = '';
+  html += '<div class="session-head"><h1 class="page-title">'+(current.isRecovery? 'Recupero':DAYS[current.dayId].title)+'</h1>'+
+    '<span class="session-tag">'+energyLabel(current.energy)+'</span></div>';
+
+  if(current.isRecovery){
+    html += '<div class="notice">Livello "scarico": oggi niente carichi pesanti. Il corpo ha già dato al lavoro, questa sessione serve solo a farti recuperare meglio.</div>';
+  }
+
+  if(current.dayId==='C' && !current.isRecovery){
+    html += '<div class="rounds-box"><div><div style="font-size:0.78rem;color:var(--text-dim);">Giri da completare</div><div class="n">'+current.rounds+'</div></div>'+
+      '<div class="round-btns"><button id="roundMinus">−</button><button id="roundPlus">+</button></div></div>';
+  }
+
+  html += current.sessionExercises.map((ex, i)=>{
+    const dots = Array.from({length:ex.sets}).map((_,si)=>{
+      const key = ex.id+'_'+si;
+      const done = current.setState[key];
+      return '<div class="set-dot '+(done?'done':'')+'" data-key="'+key+'">'+(si+1)+'</div>';
+    }).join('');
+    const load = state.loads[ex.id] || '';
+    const unit = ex.unit || 'kg';
+    const step = unit==='km' ? '0.1' : '0.5';
+    return '<div class="exercise-card">'+
+      '<div class="exercise-top" data-open="'+ex.id+'">'+
+        '<div><div class="exercise-name">'+ex.name+'</div><div class="exercise-target mono">'+ex.sets+' × '+ex.reps+'</div></div>'+
+        '<div class="info-dot">i</div>'+
+      '</div>'+
+      '<div class="exercise-controls">'+
+        '<span class="load-unit">'+unit+'</span><input class="load-input" type="number" step="'+step+'" inputmode="decimal" value="'+load+'" data-load="'+ex.id+'">'+
+        '<div class="set-dots">'+dots+'</div>'+
+        (ex.rest>0 ? '<button class="timer-btn" data-timer="'+ex.rest+'" data-label="'+ex.name+'">⏱ '+ex.rest+'s</button>' : '')+
+      '</div>'+
+    '</div>';
+  }).join('');
+
+  html += '<button class="btn-primary end-session" id="endSessionBtn">Termina sessione</button>';
+  html += '<button class="btn-secondary" id="cancelSessionBtn">Annulla</button>';
+
+  c.innerHTML = html;
+
+  c.querySelectorAll('[data-open]').forEach(el=>{
+    el.addEventListener('click', ()=> openModal(el.dataset.open));
+  });
+  c.querySelectorAll('.load-input').forEach(el=>{
+    el.addEventListener('change', ()=>{
+      state.loads[el.dataset.load] = el.value;
+      saveState();
+    });
+  });
+  c.querySelectorAll('.set-dot').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      current.setState[el.dataset.key] = !current.setState[el.dataset.key];
+      if(navigator.vibrate) navigator.vibrate(8);
+      renderSessione();
+    });
+  });
+  c.querySelectorAll('[data-timer]').forEach(el=>{
+    el.addEventListener('click', ()=> openTimer(parseInt(el.dataset.timer,10), el.dataset.label));
+  });
+  const rm = document.getElementById('roundMinus');
+  const rp = document.getElementById('roundPlus');
+  if(rm) rm.addEventListener('click', ()=>{ current.rounds = Math.max(1,current.rounds-1); renderSessione(); });
+  if(rp) rp.addEventListener('click', ()=>{ current.rounds = current.rounds+1; renderSessione(); });
+
+  document.getElementById('endSessionBtn').addEventListener('click', endSession);
+  document.getElementById('cancelSessionBtn').addEventListener('click', ()=>{
+    current.dayId=null; current.sessionExercises=[];
+    renderOggi(); switchTab('oggi');
+  });
+}
+
+function energyLabel(e){
+  return e==='verde' ? 'Carica piena' : e==='giallo' ? 'A metà' : 'Scarico';
+}
+
+async function endSession(){
+  const completed = Object.values(current.setState).filter(Boolean).length;
+  const total = current.sessionExercises.reduce((s,e)=>s+e.sets,0);
+  const entry = {
+    date: new Date().toISOString(),
+    dayId: current.isRecovery ? 'REC' : current.dayId,
+    title: current.isRecovery ? 'Recupero' : DAYS[current.dayId].title,
+    energy: current.energy,
+    completed, total
+  };
+  state.history.push(entry);
+
+  const prNames = [];
+  current.sessionExercises.forEach(ex=>{
+    const v = state.loads[ex.id];
+    if(v){
+      const numVal = parseFloat(v);
+      const prevHistory = state.loadHistory[ex.id] || [];
+      const isPR = prevHistory.length > 0 && numVal > Math.max(...prevHistory.map(p=>p.kg));
+      if(isPR) prNames.push(ex.name);
+      if(!state.loadHistory[ex.id]) state.loadHistory[ex.id] = [];
+      state.loadHistory[ex.id].push({date:new Date().toISOString(), kg:numVal});
+    }
+  });
+
+  await saveState();
+  if(prNames.length===1){
+    showToast('🎉 Nuovo record: '+prNames[0]);
+  }else if(prNames.length>1){
+    showToast('🎉 Nuovo record su '+prNames.length+' esercizi!');
+  }else{
+    showToast('Sessione salvata');
+  }
+  current.dayId = null;
+  current.sessionExercises = [];
+  current.setState = {};
+  renderOggi();
+  switchTab('progressi');
+}
+
+/* ---------- MODAL ---------- */
+function openModal(exId){
+  const ex = findExercise(exId) || current.sessionExercises.find(e=>e.id===exId);
+  if(!ex) return;
+  document.getElementById('modalPose').innerHTML = POSES[ex.pose] || POSES.standing;
+  document.getElementById('modalTitle').textContent = ex.name;
+  document.getElementById('modalTarget').textContent = ex.sets+' × '+ex.reps+(ex.rest>0 ? ' · recupero '+ex.rest+'s' : '');
+  document.getElementById('modalCue').textContent = ex.cue;
+  document.getElementById('modalVideo').href = 'https://www.youtube.com/results?search_query='+encodeURIComponent(ex.video);
+  document.getElementById('modalOverlay').classList.add('active');
+}
+document.getElementById('modalOverlay').addEventListener('click', (e)=>{
+  if(e.target.id==='modalOverlay') e.currentTarget.classList.remove('active');
+});
+
+/* ---------- TIMER ---------- */
+function openTimer(seconds, label){
+  clearInterval(timer.interval);
+  timer.seconds = seconds;
+  timer.initial = seconds;
+  timer.running = false;
+  timer.label = label;
+  document.getElementById('timerLabel').textContent = 'Recupero · '+label;
+  updateTimerDisplay();
+  document.getElementById('timerStart').textContent = 'Avvia';
+  document.getElementById('timerOverlay').classList.add('active');
+}
+function updateTimerDisplay(){
+  const m = Math.floor(timer.seconds/60);
+  const s = timer.seconds%60;
+  document.getElementById('timerNum').textContent = String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+function beep(){
+  try{
+    const ctx = new (window.AudioContext||window.webkitAudioContext)();
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.frequency.value = 880;
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    o.start();
+    o.stop(ctx.currentTime+0.35);
+  }catch(e){}
+  if(navigator.vibrate) navigator.vibrate([200,80,200]);
+}
+document.getElementById('timerStart').addEventListener('click', ()=>{
+  if(timer.running){
+    timer.running=false;
+    clearInterval(timer.interval);
+    document.getElementById('timerStart').textContent = 'Riprendi';
+  }else{
+    timer.running=true;
+    document.getElementById('timerStart').textContent = 'Pausa';
+    timer.interval = setInterval(()=>{
+      timer.seconds--;
+      if(timer.seconds<=0){
+        clearInterval(timer.interval);
+        timer.running=false;
+        timer.seconds=0;
+        updateTimerDisplay();
+        beep();
+        document.getElementById('timerStart').textContent = 'Avvia';
+        return;
+      }
+      updateTimerDisplay();
+    },1000);
+  }
+});
+document.getElementById('timerReset').addEventListener('click', ()=>{
+  clearInterval(timer.interval);
+  timer.running=false;
+  timer.seconds=timer.initial;
+  updateTimerDisplay();
+  document.getElementById('timerStart').textContent = 'Avvia';
+});
+document.getElementById('timerPlus').addEventListener('click', ()=>{ timer.seconds+=15; timer.initial+=15; updateTimerDisplay(); });
+document.getElementById('timerMinus').addEventListener('click', ()=>{ timer.seconds=Math.max(15,timer.seconds-15); timer.initial=Math.max(15,timer.initial-15); updateTimerDisplay(); });
+document.getElementById('timerClose').addEventListener('click', ()=>{
+  clearInterval(timer.interval);
+  timer.running=false;
+  document.getElementById('timerOverlay').classList.remove('active');
+});
+
+/* ---------- VIEW: PROGRESSI ---------- */
+function computeStreak(history){
+  if(history.length===0) return 0;
+  const weekKey = (d)=>{
+    const onejan = new Date(d.getFullYear(),0,1);
+    const week = Math.ceil((((d - onejan) / 86400000) + onejan.getDay()+1)/7);
+    return d.getFullYear()+'-'+week;
+  };
+  const weeks = new Set(state.history.map(h=>weekKey(new Date(h.date))));
+  let streak = 0;
+  let cursor = new Date();
+  while(weeks.has(weekKey(cursor))){
+    streak++;
+    cursor.setDate(cursor.getDate()-7);
+  }
+  return streak;
+}
+
+function computeTrend(points){
+  const first = points[0].kg;
+  const last = points[points.length-1].kg;
+  const diff = last - first;
+  const pct = first !== 0 ? (diff/Math.abs(first))*100 : 0;
+  const direction = diff > 0.001 ? 'up' : diff < -0.001 ? 'down' : 'flat';
+  return { diff, pct, direction };
+}
+
+function sparklineSvg(points, colorVar){
+  const w=280, h=44, pad=4;
+  const vals = points.map(p=>p.kg);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const range = (max-min) || 1;
+  const stepX = points.length>1 ? (w-pad*2)/(points.length-1) : 0;
+  const coords = points.map((p,i)=>{
+    const x = pad + i*stepX;
+    const y = h-pad - ((p.kg-min)/range)*(h-pad*2);
+    return [x,y];
+  });
+  const path = coords.map((c,i)=>(i===0?'M':'L')+c[0].toFixed(1)+','+c[1].toFixed(1)).join(' ');
+  const lastDot = coords[coords.length-1];
+  return '<svg viewBox="0 0 '+w+' '+h+'" width="100%" height="'+h+'" preserveAspectRatio="none">'+
+    '<path d="'+path+'" fill="none" stroke="'+colorVar+'" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>'+
+    '<circle cx="'+lastDot[0].toFixed(1)+'" cy="'+lastDot[1].toFixed(1)+'" r="4" fill="'+colorVar+'"/>'+
+    '</svg>';
+}
+
+function renderProgressi(){
+  const totalSessions = state.history.length;
+  const thisWeek = state.history.filter(h=>{
+    const d = new Date(h.date);
+    const now = new Date();
+    const diff = (now-d)/(1000*60*60*24);
+    return diff <= 7;
+  }).length;
+  const streak = computeStreak(state.history);
+  document.getElementById('statRow').innerHTML =
+    '<div class="stat-box"><span class="n">'+totalSessions+'</span><span class="l">Sessioni totali</span></div>'+
+    '<div class="stat-box"><span class="n">'+thisWeek+'</span><span class="l">Questa settimana</span></div>'+
+    '<div class="stat-box"><span class="n">'+streak+'</span><span class="l">Settimane di fila</span></div>';
+
+  const exIds = Object.keys(state.loadHistory).filter(id=>state.loadHistory[id].length>=2);
+  const grid = document.getElementById('progressGrid');
+  if(exIds.length===0){
+    grid.innerHTML = '<div class="chart-empty">Registra un carico (o i km) in almeno 2 sessioni per iniziare a vedere qui i tuoi progressi.</div>';
+  }else{
+    grid.innerHTML = exIds.map(id=>{
+      const ex = findExercise(id);
+      const unit = (ex && ex.unit) || 'kg';
+      const points = state.loadHistory[id];
+      const trend = computeTrend(points);
+      const color = trend.direction==='up' ? 'var(--ok)' : trend.direction==='down' ? 'var(--danger)' : 'var(--text-faint)';
+      const arrow = trend.direction==='up' ? '↑' : trend.direction==='down' ? '↓' : '→';
+      const pctTxt = (trend.pct>=0?'+':'')+trend.pct.toFixed(0)+'%';
+      const last = points[points.length-1].kg;
+      return '<div class="progress-card">'+
+        '<div class="progress-card-head"><span class="progress-name">'+(ex?ex.name:id)+'</span>'+
+        '<span class="progress-trend" style="color:'+color+'">'+arrow+' '+pctTxt+'</span></div>'+
+        sparklineSvg(points, color)+
+        '<div class="progress-latest mono">ultimo: '+last+' '+unit+'</div>'+
+      '</div>';
+    }).join('');
+  }
+
+  const hist = state.history.slice().reverse();
+  document.getElementById('historyList').innerHTML = hist.length===0
+    ? '<p class="hint">Ancora nessuna sessione registrata.</p>'
+    : hist.map(h=>{
+        const d = new Date(h.date);
+        return '<div class="history-item"><div><div class="d">'+h.title+'</div><div class="m">'+fmtDate(d)+' · '+h.completed+'/'+h.total+' set</div></div>'+
+          '<span class="tag">'+energyLabel(h.energy)+'</span></div>';
+      }).join('');
+}
+
+/* ---------- VIEW: ESERCIZI ---------- */
+function renderEsercizi(){
+  const grid = document.getElementById('libGrid');
+  grid.innerHTML = allExercisesFlat().map(ex=>{
+    return '<div class="lib-item" data-open="'+ex.id+'"><span class="name">'+ex.name+'</span><span class="day">SESSIONE '+ex.dayId+'</span></div>';
+  }).join('');
+  grid.querySelectorAll('[data-open]').forEach(el=>{
+    el.addEventListener('click', ()=>openModal(el.dataset.open));
+  });
+}
+
+/* ---------- INIT ---------- */
+async function init(){
+  document.getElementById('topdate').textContent = fmtDate(new Date());
+  await loadState();
+  renderOggi();
+  renderSessione();
+}
+init();
+
+/* ---------- SERVICE WORKER (offline) ---------- */
+/* Se il file sw.js non è raggiungibile (es. hosting a file singolo) fallisce
+   in silenzio: l'app funziona comunque, solo senza cache offline garantita. */
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  });
+}
+
+})();
+</script>
+</body>
+</html>
